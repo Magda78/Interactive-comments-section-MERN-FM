@@ -1,4 +1,4 @@
-require('dotenv').config({ path: '.env' });
+require('dotenv').config({ path: '.env.local' });
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
@@ -31,6 +31,15 @@ const corsOptions = {
 	}
 };
 app.use(cors(corsOptions));
+
+if (process.env.NODE_ENV === 'production') {
+	// Serve any static files
+	app.use(express.static(path.join(__dirname, 'frontend/build')));
+	// Handle React routing, return all requests to React app
+	app.get('*', function(req, res) {
+		res.sendFile(path.join(__dirname, 'frontend/build', 'index.html'));
+	});
+}
 
 app.use(bodyParser.json());
 //app.use('/users', usersRoute);
