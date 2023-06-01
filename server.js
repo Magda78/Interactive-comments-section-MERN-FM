@@ -9,7 +9,7 @@ const commentsRoute = require('./routes/comments-route');
 
 const app = express();
 
-const mongoosePath = process.env.MANGO_URL;
+const mongoosePath = process.env.MONGO_URL;
 mongoose.set('strictQuery', false);
 
 mongoose.connect(mongoosePath, {
