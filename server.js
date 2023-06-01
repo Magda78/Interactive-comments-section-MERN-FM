@@ -42,7 +42,6 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 app.use(bodyParser.json());
-//app.use('/users', usersRoute);
 app.use('/comments', commentsRoute);
 app.use('/uploads', express.static('uploads'));
 
