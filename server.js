@@ -12,10 +12,17 @@ const app = express();
 const mongoosePath = process.env.MONGO_URL;
 mongoose.set('strictQuery', false);
 
-mongoose.connect(mongoosePath, {
-	useNewUrlParser: true,
-	useUnifiedTopology: true
-});
+mongoose
+	.connect(mongoosePath, {
+		useNewUrlParser: true,
+		useUnifiedTopology: true
+	})
+	.then(() => {
+		console.log('Connected to MongoDB');
+	})
+	.catch((error) => {
+		console.error('Error connecting to MongoDB:', error);
+	});
 
 const whitelist = [ 'http://localhost:3000' ];
 const corsOptions = {
