@@ -12,7 +12,7 @@ function Comments() {
 
 	useEffect(() => {
 		const defaultData = async () => {
-			const res = await fetch('/');
+			const res = await fetch('/comments');
 			const data = await res.json();
 			setData(data);
 		};

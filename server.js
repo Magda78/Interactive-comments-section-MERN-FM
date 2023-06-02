@@ -25,7 +25,7 @@ mongoose
 		console.error('Error connecting to MongoDB:', error);
 	});
 
-const whitelist = [ 'http://localhost:3000' ];
+const whitelist = [ 'http://localhost:3000', 'https://lit-anchorage-24555.herokuapp.com' ];
 const corsOptions = {
 	origin: function(origin, callback) {
 		console.log('** Origin of request ' + origin);
