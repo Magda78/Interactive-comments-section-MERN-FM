@@ -9,6 +9,7 @@ const commentsRoute = require('./routes/comments-route');
 
 const app = express();
 
+const port = process.env.PORT || 3001;
 const mongoosePath = process.env.MONGO_URL;
 mongoose.set('strictQuery', false);
 
@@ -52,4 +53,6 @@ app.use(bodyParser.json());
 app.use('/comments', commentsRoute);
 app.use('/uploads', express.static('uploads'));
 
-app.listen(3001);
+app.listen(port, () => {
+	console.log(`Server listening on port ${port}`);
+});
