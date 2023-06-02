@@ -11,7 +11,6 @@ function Reply({
 	usernameReply,
 	commentReply,
 	createdAtReply,
-	image,
 	contentReply,
 	buttonText,
 	scoreReply,
