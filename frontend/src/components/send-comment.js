@@ -29,7 +29,7 @@ function SendComment({ buttonText, idComment, replyingTo, png }) {
 	const commentSubmitHandler = async (e) => {
 		if (buttonText === 'SEND' && comment.length > 0 && comment !== 'Add comment...') {
 			try {
-				const response = await fetch('http://localhost:3001/comments', {
+				const response = await fetch('/comments', {
 					method: 'POST',
 					headers: {
 						'Content-Type': 'application/json'
