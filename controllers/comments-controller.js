@@ -20,7 +20,7 @@ const createComment = async (req, res, next) => {
 	const err = validationResult(req);
 	if (!err.isEmpty()) {
 		console.log(err);
-		return res.status(400).json({ err: err });
+		return res.status(400).json({ errors: err.array() });
 	}
 
 	const createComment = new Comment({
@@ -66,7 +66,7 @@ const editComment = async (req, res, next) => {
 	const err = validationResult(req);
 	if (!err.isEmpty()) {
 		console.log(err);
-		return res.status(400).json({ err: err });
+		return res.status(400).json({ errors: err.array() });
 	}
 	try {
 		commentToEdit = await Comment.findById(commentId);
@@ -90,7 +90,7 @@ const editCommentScore = async (req, res, next) => {
 	const err = validationResult(req);
 	if (!err.isEmpty()) {
 		console.log(err);
-		return res.status(400).json({ err: err });
+		return res.status(400).json({ errors: err.array() });
 	}
 	try {
 		commentToEdit = await Comment.findById(commentId);
@@ -135,7 +135,7 @@ const createResponseToTheComment = async (req, res, next) => {
 	const err = validationResult(req);
 	if (!err.isEmpty()) {
 		console.log(err);
-		return res.status(400).json({ err: err });
+		return res.status(400).json({ errors: err.array() });
 	}
 
 	try {
@@ -186,10 +186,7 @@ const getReply = async (req, res, next) => {
 	const replyId = req.params.replieId;
 	let nestedReplyById;
 	try {
-		nestedReplyById = await Comment.findOne(
-			{ _id: commentId, 'replies._id': replyId },
-			{ 'replies.$': 1 }
-		).exec();
+		nestedReplyById = await Comment.findOne({ _id: commentId, 'replies._id': replyId }, { 'replies.$': 1 }).exec();
 	} catch (error) {
 		res.status(500).json({ message: error });
 		return next(error);
@@ -209,7 +206,7 @@ const editReply = async (req, res, next) => {
 	const err = validationResult(req);
 	if (!err.isEmpty()) {
 		console.log(err);
-		return res.status(400).json({ err: err });
+		return res.status(400).json({ errors: err.array() });
 	}
 	try {
 		const comment = await Comment.findById(commentId);
