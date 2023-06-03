@@ -8,7 +8,6 @@ const path = require('path');
 const commentsRoute = require('./routes/comments-route');
 
 const app = express();
-app.use(express.json());
 
 const port = process.env.PORT || 3001;
 const mongoosePath = process.env.MONGO_URL;
@@ -50,7 +49,7 @@ if (process.env.NODE_ENV === 'production') {
 	});
 }
 
-app.use(bodyParser.json());
+app.use(express.json());
 app.use('/comments', commentsRoute);
 
 app.listen(port, () => {
