@@ -14,7 +14,7 @@ function Delete() {
 	};
 	const deleteReplyHandler = async () => {
 		try {
-			const response = await fetch(`http://localhost:3001/comments/${id}/replies/${replyId}`, {
+			const response = await fetch(`/comments/${id}/replies/${replyId}`, {
 				method: 'DELETE',
 				headers: {
 					'Content-Type': 'aplication/json'
@@ -34,7 +34,7 @@ function Delete() {
 
 	const deleteCommentHandler = async () => {
 		try {
-			const response = await fetch(`http://localhost:3001/comments/${id}`, {
+			const response = await fetch(`/comments/${id}`, {
 				method: 'DELETE',
 				headers: {
 					'Content-Type': 'aplication/json'

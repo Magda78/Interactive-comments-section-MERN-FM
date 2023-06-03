@@ -37,8 +37,8 @@ function SendComment({ buttonText, idComment, replyingTo, png }) {
 					body: JSON.stringify({
 						content: comment,
 						username: defaultUsername,
-						png: '../images/avatars/image-juliusomo.png',
-						webp: '../images/avatars/image-juliusomo.webp'
+						png: '/images/avatars/image-juliusomo.png',
+						webp: '/images/avatars/image-juliusomo.webp'
 					})
 				});
 
