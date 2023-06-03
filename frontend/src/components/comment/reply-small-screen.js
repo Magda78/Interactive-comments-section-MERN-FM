@@ -53,7 +53,7 @@ function ReplySmallScreen({
 
 	const updateScoreHandler = async (updateData) => {
 		try {
-			const response = await fetch(`http://localhost:3001/comments/${idComment}/replies/${idReply}/score`, {
+			const response = await fetch(`/comments/${idComment}/replies/${idReply}/score`, {
 				method: 'PATCH',
 				headers: {
 					'Content-Type': 'application/json'
