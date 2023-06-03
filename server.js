@@ -39,6 +39,8 @@ const corsOptions = {
 	}
 };
 app.use(cors(corsOptions));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
 if (process.env.NODE_ENV === 'production') {
 	// Serve any static files
@@ -49,7 +51,6 @@ if (process.env.NODE_ENV === 'production') {
 	});
 }
 
-app.use(express.json());
 app.use('/comments', commentsRoute);
 
 app.listen(port, () => {
