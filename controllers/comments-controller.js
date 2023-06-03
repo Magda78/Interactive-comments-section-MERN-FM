@@ -20,7 +20,7 @@ const createComment = async (req, res, next) => {
 	const err = validationResult(req);
 	if (!err.isEmpty()) {
 		console.log(err);
-		return res.status(400).json({ errors: err.array() });
+		return res.status(400).json({ err: err.array() });
 	}
 
 	const createComment = new Comment({
@@ -66,12 +66,12 @@ const editComment = async (req, res, next) => {
 	const err = validationResult(req);
 	if (!err.isEmpty()) {
 		console.log(err);
-		return res.status(400).json({ errors: err.array() });
+		return res.status(400).json({ err: err.array() });
 	}
 	try {
 		commentToEdit = await Comment.findById(commentId);
 		if (!commentToEdit) {
-			return res.status(404).send({ message: 'Comment not found' });
+			return res.status(404).json({ message: 'Comment not found' });
 		}
 		commentToEdit.content = content;
 		await commentToEdit.save();
@@ -95,7 +95,7 @@ const editCommentScore = async (req, res, next) => {
 	try {
 		commentToEdit = await Comment.findById(commentId);
 		if (!commentToEdit) {
-			return res.status(404).send({ message: 'Comment not found' });
+			return res.status(404).json({ message: 'Comment not found' });
 		}
 		commentToEdit.score = score;
 		await commentToEdit.save();
@@ -115,7 +115,7 @@ const deleteComment = async (req, res, next) => {
 	try {
 		commentToDelete = await Comment.findById(commentId);
 		if (!commentToDelete) {
-			return res.status(404).send({ message: 'Comment not found' });
+			return res.status(404).json({ message: 'Comment not found' });
 		}
 
 		await commentToDelete.remove();
@@ -135,7 +135,7 @@ const createResponseToTheComment = async (req, res, next) => {
 	const err = validationResult(req);
 	if (!err.isEmpty()) {
 		console.log(err);
-		return res.status(400).json({ errors: err.array() });
+		return res.status(400).json({ err: err.array() });
 	}
 
 	try {
@@ -206,16 +206,16 @@ const editReply = async (req, res, next) => {
 	const err = validationResult(req);
 	if (!err.isEmpty()) {
 		console.log(err);
-		return res.status(400).json({ errors: err.array() });
+		return res.status(400).json({ err: err.array() });
 	}
 	try {
 		const comment = await Comment.findById(commentId);
 		if (!comment) {
-			return res.status(404).send({ message: 'Comment not found' });
+			return res.status(404).json({ message: 'Comment not found' });
 		}
 		const replyToEdit = comment.replies.id(replyId);
 		if (!replyToEdit) {
-			return res.status(404).send({ message: 'Reply not found' });
+			return res.status(404).json({ message: 'Reply not found' });
 		}
 
 		replyToEdit.content = content;
@@ -235,11 +235,11 @@ const deleteReply = async (req, res, next) => {
 	try {
 		const comment = await Comment.findById(commentId);
 		if (!comment) {
-			return res.status(404).send({ message: 'Comment not found' });
+			return res.status(404).json({ message: 'Comment not found' });
 		}
 		const replyToDelete = comment.replies.id(replyId);
 		if (!replyToDelete) {
-			return res.status(404).send({ message: 'Reply not found' });
+			return res.status(404).json({ message: 'Reply not found' });
 		}
 
 		replyToDelete.remove();
@@ -259,16 +259,16 @@ const editScore = async (req, res, next) => {
 	const err = validationResult(req);
 	if (!err.isEmpty()) {
 		console.log(err);
-		return res.status(400).json({ err: err });
+		return res.status(400).json({ err: err.array() });
 	}
 	try {
 		const comment = await Comment.findById(commentId);
 		if (!comment) {
-			return res.status(404).send({ message: 'Comment not found' });
+			return res.status(404).json({ message: 'Comment not found' });
 		}
 		const replyToEdit = comment.replies.id(replieId);
 		if (!replyToEdit) {
-			return res.status(404).send({ message: 'Reply not found' });
+			return res.status(404).json({ message: 'Reply not found' });
 		}
 
 		replyToEdit.score = score;
