@@ -51,7 +51,7 @@ if (process.env.NODE_ENV === 'production') {
 
 app.use(bodyParser.json());
 app.use('/comments', commentsRoute);
-app.use('/uploads', express.static('uploads'));
+
 
 app.listen(port, () => {
 	console.log(`Server listening on port ${port}`);
