@@ -88,7 +88,7 @@ function ReplySmallScreen({
 	};
 	const updateHandler = async () => {
 		try {
-			const response = await fetch(`http://localhost:3001/comments/${idComment}/replies/${idReply}`, {
+			const response = await fetch(`/comments/${idComment}/replies/${idReply}`, {
 				method: 'PATCH',
 				headers: {
 					'Content-Type': 'application/json'

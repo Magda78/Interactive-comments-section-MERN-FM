@@ -44,7 +44,7 @@ function CommentSmallScreen({
 
 	const updateScoreHandler = async (updateData) => {
 		try {
-			const response = await fetch(`http://localhost:3001/comments/${idComment}/score`, {
+			const response = await fetch(`/comments/${idComment}/score`, {
 				method: 'PATCH',
 				headers: {
 					'Content-Type': 'application/json'
