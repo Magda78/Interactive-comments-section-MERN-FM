@@ -17,7 +17,7 @@ function Comments() {
 			setData(data);
 		};
 		defaultData();
-	}, [data]);
+	}, []);
  
 	const sortedComment = data?.sort((a, b) => b.score - a.score);
 
