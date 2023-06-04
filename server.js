@@ -41,15 +41,20 @@ const corsOptions = {
 		}
 	},
 	// Allow the necessary headers in the response
-	allowedHeaders: ['Content-Type', 'Authorization'],
+	allowedHeaders: [
+		'Content-Type',
+		'Authorization',
+		'Accept',
+		'X-Requested-With',
+		'Origin',
+		'Access-Control-Allow-Headers'
+	]
 };
-
 
 app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use('/comments', commentsRoute);
-
 
 if (process.env.NODE_ENV === 'production') {
 	// Serve any static files
