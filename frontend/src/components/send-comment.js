@@ -55,7 +55,7 @@ function SendComment({ buttonText, idComment, replyingTo, png }) {
 		}
 		if (buttonText === 'Reply' && comment.length > 0 && comment !== 'Add comment...') {
 			try {
-				const response = await fetch(`http://localhost:3001/comments/${idComment}/replies`, {
+				const response = await fetch(`/comments/${idComment}/replies`, {
 					method: 'POST',
 					headers: {
 						'Content-Type': 'application/json'
