@@ -39,7 +39,9 @@ const corsOptions = {
 			console.log('Origin rejected');
 			callback(new Error('Not allowed by CORS'));
 		}
-	}
+	},
+	// Allow the necessary headers in the response
+	allowedHeaders: ['Content-Type', 'Authorization'],
 };
 
 
