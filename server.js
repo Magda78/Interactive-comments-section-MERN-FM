@@ -16,7 +16,10 @@ mongoose.set('strictQuery', false);
 mongoose
 	.connect(mongoosePath, {
 		useNewUrlParser: true,
-		useUnifiedTopology: true
+		useUnifiedTopology: true,
+		writeConcern: {
+			w: 'majority'
+		}
 	})
 	.then(() => {
 		console.log('Connected to MongoDB');
