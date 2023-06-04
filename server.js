@@ -47,8 +47,10 @@ const corsOptions = {
 		'Accept',
 		'X-Requested-With',
 		'Origin',
-		'Access-Control-Allow-Headers'
-	]
+		'Access-Control-Allow-Headers',
+		'Access-Control-Allow-Origin'
+	],
+	exposedHeaders: [ 'Access-Control-Allow-Origin' ]
 };
 
 app.use(cors(corsOptions));
