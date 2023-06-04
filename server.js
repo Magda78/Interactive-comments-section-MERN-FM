@@ -29,18 +29,24 @@ mongoose
 	});
 
 const whitelist = [ 'http://localhost:3000', 'https://lit-anchorage-24555.herokuapp.com' ];
+//const corsOptions = {
+//	origin: function(origin, callback) {
+//		console.log('** Origin of request ' + origin);
+//		if (whitelist.indexOf(origin) !== -1 || !origin) {
+//			console.log('Origin acceptable');
+//			callback(null, true);
+//		} else {
+//			console.log('Origin rejected');
+//			callback(new Error('Not allowed by CORS'));
+//		}
+//	}
+//};
+
 const corsOptions = {
-	origin: function(origin, callback) {
-		console.log('** Origin of request ' + origin);
-		if (whitelist.indexOf(origin) !== -1 || !origin) {
-			console.log('Origin acceptable');
-			callback(null, true);
-		} else {
-			console.log('Origin rejected');
-			callback(new Error('Not allowed by CORS'));
-		}
-	}
-};
+	origin: whitelist, // Set the allowed origin
+	methods: 'GET, POST, PUT, DELETE', // Set the allowed HTTP methods
+	allowedHeaders: 'Content-Type, Authorization', // Set the allowed headers
+  };
 app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -48,7 +54,7 @@ app.use('/comments', commentsRoute);
 
 if (process.env.NODE_ENV === 'production') {
 	// Serve any static files
-	app.use(express.static(path.join(__dirname, 'frontend/build')));
+	app.use(express.stat//ic(path.join(__dirname, 'frontend/build')));
 	// Handle React routing, return all requests to React app
 	app.get('*', function(req, res) {
 		res.sendFile(path.join(__dirname, 'frontend/build', 'index.html'));
