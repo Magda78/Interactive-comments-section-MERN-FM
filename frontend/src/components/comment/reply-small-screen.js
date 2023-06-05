@@ -109,6 +109,7 @@ function ReplySmallScreen({
 			console.log(err);
 		}
 		setEdit(false);
+		window.location.reload();
 	};
 	return (
 		<main>

@@ -30,6 +30,7 @@ function Delete() {
 			console.log(err);
 		}
 		dispatch(toggleOverlay(false));
+		window.location.reload();
 	};
 
 	const deleteCommentHandler = async () => {
@@ -50,6 +51,7 @@ function Delete() {
 			console.log(err);
 		}
 		dispatch(toggleOverlay(false));
+		window.location.reload();
 	};
 
 	return (

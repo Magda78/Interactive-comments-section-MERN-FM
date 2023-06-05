@@ -96,6 +96,7 @@ function CommentLargeScreen({
 			console.log(err);
 		}
 		setEdit(false);
+		window.location.reload();
 	};
 
 	const deleteWidgetHandler = () => {
