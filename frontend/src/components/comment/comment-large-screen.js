@@ -205,7 +205,7 @@ function CommentLargeScreen({
 								<button
 									onClick={updateHandler}
 									type="submit"
-									className="text-base text-white  leading-6 uppercase rounded-md bg-moderate-blue pt-3 pl-[30px] pr-[30px] pb-3"
+									className="text-base text-white  leading-6 uppercase rounded-md bg-moderate-blue pt-3 pl-[30px] pr-[30px] pb-3 hover:bg-light-grayish-blue"
 								>
 									UPDATE
 								</button>
