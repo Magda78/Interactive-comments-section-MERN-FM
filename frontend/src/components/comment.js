@@ -31,7 +31,7 @@ function Comment({
 	}, []);
 
 	return (
-		<main>
+		<section>
 			{screenSize === 'sm' ? (
 				<CommentSmallScreen
 					png={png}
@@ -57,7 +57,7 @@ function Comment({
 					webp={webp}
 				/>
 			)}
-		</main>
+		</section>
 	);
 }
 

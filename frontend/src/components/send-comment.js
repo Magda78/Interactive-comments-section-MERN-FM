@@ -82,10 +82,14 @@ function SendComment({ buttonText, idComment, replyingTo, png }) {
 	};
 
 	return (
-		<main className="p-4  bg-component-background rounded-lg">
+		<section className="p-4  bg-component-background rounded-lg">
 			{screenSize === 'sm' ? (
 				<form>
+					<label htmlFor="comment" className="hidden">
+						Comment:
+					</label>
 					<textarea
+						id="comment"
 						onClick={textAreaHandler}
 						onChange={textAreaUserInputHandler}
 						value={comment}
@@ -124,7 +128,7 @@ function SendComment({ buttonText, idComment, replyingTo, png }) {
 					</button>
 				</form>
 			)}
-		</main>
+		</section>
 	);
 }
 

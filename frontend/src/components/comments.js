@@ -22,7 +22,7 @@ function Comments() {
 	const sortedComment = data?.sort((a, b) => b.score - a.score);
 
 	return (
-		<main>
+		<section>
 			<div className="pt-8 pr-4 pb-8 pl-4 z-10 xl:pl-[355px] xl:pr-[355px] xl:pb-16 xl:pt-16">
 				<div className="mb-4">
 					{sortedComment?.map(item => (	
@@ -42,7 +42,7 @@ function Comments() {
 				
 				{overlay ? <div className='bg-overlay z-30 w-full h-screen top-0 right-0 fixed  pl-4 pr-4 flex justify-center items-center'><Delete /></div>:null}
 			</div>
-		</main>
+		</section>
 	);
 								}
 

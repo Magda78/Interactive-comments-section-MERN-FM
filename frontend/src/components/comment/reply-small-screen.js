@@ -112,7 +112,7 @@ function ReplySmallScreen({
 		window.location.reload();
 	};
 	return (
-		<main>
+		<section>
 			<div className="p-4 flex flex-col bg-component-background rounded-lg mb-4">
 				<div className="h-8 mb-5 rounded-full bg-red-500 flex flex-row justify-start items-center">
 					<div className="w-8 h-8 rounded-full">
@@ -244,7 +244,7 @@ function ReplySmallScreen({
 					/>
 				) : null}
 			</div>
-		</main>
+		</section>
 	);
 }
 

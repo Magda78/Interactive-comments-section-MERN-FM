@@ -35,7 +35,7 @@ function Reply({
 	}, []);
 
 	return (
-		<main>
+		<section>
 			<div className="mb-4 pl-4 xl:pl-[43px]">
 				{screenSize === 'sm' ? (
 					<ReplySmallScreen
@@ -71,7 +71,7 @@ function Reply({
 					/>
 				)}
 			</div>
-		</main>
+		</section>
 	);
 }
 

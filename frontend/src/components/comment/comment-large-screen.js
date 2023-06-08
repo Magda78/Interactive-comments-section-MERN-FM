@@ -104,7 +104,7 @@ function CommentLargeScreen({
 		dispatch(setCommentId(idComment));
 	};
 	return (
-		<main>
+		<section>
 			<div className="p-4 flex flex-row bg-component-background rounded-lg ">
 				<div className="bg-very-light-gray mr-6 flex flex-col justify-center items-center w-10 h-[100px] pt-[11.9px] pb-[16.34px] space-y-2 rounded-lg ">
 					<button
@@ -233,7 +233,7 @@ function CommentLargeScreen({
 					/>
 				) : null}
 			</div>
-		</main>
+		</section>
 	);
 }
 

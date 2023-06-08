@@ -55,7 +55,7 @@ function Delete() {
 	};
 
 	return (
-		<main className="rounded-lg p-6 bg-white z-40 bg-opacity-100">
+		<section className="rounded-lg p-6 bg-white z-40 bg-opacity-100">
 			<h2 className="text-xl text-dark-blue mb-4 font-medium">Delete comment</h2>
 			<p className="font-normal text-base text-grayish-blue mb-4">
 				Are you sure you want to delete this comment? This will remove the comment and can’t be undone.
@@ -74,7 +74,7 @@ function Delete() {
 					Yes, Delete
 				</button>
 			</div>
-		</main>
+		</section>
 	);
 }
 

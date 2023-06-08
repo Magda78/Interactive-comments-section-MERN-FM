@@ -104,7 +104,7 @@ function CommentSmallScreen({
 		dispatch(setCommentId(idComment));
 	};
 	return (
-		<main>
+		<section>
 			<div className="p-4 flex flex-col bg-component-background rounded-lg ">
 				<div className="h-8 mb-5 rounded-full bg-red-500 flex flex-row justify-start items-center">
 					<div className="w-8 h-8 rounded-full">
@@ -231,7 +231,7 @@ function CommentSmallScreen({
 					/>
 				) : null}
 			</div>
-		</main>
+		</section>
 	);
 }
 
