@@ -113,7 +113,9 @@ function SendComment({ buttonText, idComment, replyingTo, png }) {
 					<div className="w-10 h-10 rounded-full">
 						<img src="../images/avatars/image-juliusomo.png" alt="user-avatar" />
 					</div>
+					<label htmlFor="comment" className="hidden" />
 					<textarea
+						id="comment"
 						onClick={textAreaHandler}
 						onChange={textAreaUserInputHandler}
 						value={comment}
