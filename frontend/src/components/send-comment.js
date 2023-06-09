@@ -90,6 +90,7 @@ function SendComment({ buttonText, idComment, replyingTo, png }) {
 					</label>
 					<textarea
 						id="comment"
+						aria-label="Comment"
 						onClick={textAreaHandler}
 						onChange={textAreaUserInputHandler}
 						value={comment}
@@ -116,6 +117,7 @@ function SendComment({ buttonText, idComment, replyingTo, png }) {
 					<label htmlFor="comment" className="hidden" />
 					<textarea
 						id="comment"
+						aria-label="Comment"
 						onClick={textAreaHandler}
 						onChange={textAreaUserInputHandler}
 						value={comment}
