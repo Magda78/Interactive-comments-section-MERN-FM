@@ -36,6 +36,7 @@ function Reply({
 
 	return (
 		<section>
+			<h2 className="hidden">Section Heading</h2>
 			<div className="mb-4 pl-4 xl:pl-[43px]">
 				{screenSize === 'sm' ? (
 					<ReplySmallScreen

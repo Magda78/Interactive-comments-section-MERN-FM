@@ -23,6 +23,7 @@ function Comments() {
 
 	return (
 		<section>
+			<h2 className="hidden">Section Heading</h2>
 			<div className="pt-8 pr-4 pb-8 pl-4 z-10 xl:pl-[355px] xl:pr-[355px] xl:pb-16 xl:pt-16">
 				<div className="mb-4">
 					{sortedComment?.map(item => (	

@@ -83,6 +83,7 @@ function SendComment({ buttonText, idComment, replyingTo, png }) {
 
 	return (
 		<section className="p-4  bg-component-background rounded-lg">
+			<h2 className="hidden">Section Heading</h2>
 			{screenSize === 'sm' ? (
 				<form>
 					<label htmlFor="comment" className="hidden">

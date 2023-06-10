@@ -32,6 +32,7 @@ function Comment({
 
 	return (
 		<section>
+			<h2 className="hidden">Section Heading</h2>
 			{screenSize === 'sm' ? (
 				<CommentSmallScreen
 					png={png}
